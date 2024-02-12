@@ -1,0 +1,39 @@
+new django project tutorial
+
+1. run new terminal
+2. cd .. (pasirenkam direktorijos kelia: (venv) codeacademy@DESKTOP-R27HJNP:~/monda_py04_django/)
+3. django-admin startproject tasker_Andrius (sukuriam projekta, pav. pvz: tasker_Andrius)
+4. projekto kataloge "tasker_Andrius" reikia sukurti "local_settings.py" faila (tokiu atveju jautri info nesusikomitins i githuba)
+5. toliau rasom terminale: cd tasker_Andrius
+6. ./manage.py shell
+7. from django.core.management import utils 
+8. utils.get_random_secret_key() (susigeneruojam atsitiktini koda)
+9. 'atsitiktiniskodas' (jei nepatinka, galim paleist dar karta susigeneruot nauja koda)
+10. atsidarom susikurta faila: local_settings.py
+11: irasom kodo eilute: SECTRET_KEY = 'atsitiktiniskodas'
+12. atsidarom projekto aplanke faila: settings.py
+13. modifikuojam ji, irasydami kodo gabaliuka pacioj pabaigoj:
+"""
+try:
+	from local_settings import*
+except ImportError:
+	pass
+"""
+14. Griztam i terminala ir uzdarom shella django: "ctrl+z"
+15. toliau terminale rasom: ./manage.py migrate (padarom duomenu migracija t.y bus sukuriamos lenteles)
+16. ./manage.py runserver (paleidziam serveri)
+17. terminalo lange paleidziam linka su ip adresu pvz: http://127.0.0.1:8000 (isitikinam ar puslapio fone bus nupiesta raketa, jei taip, viskas ok)
+18. run/new terminal (butinai palikti sena terminala jo neuzdaryti, kad veiktu pries tai paleistas serveris)
+19. toliau naujame terminale: cd tasker_Andrius/
+20. ./manage.py createsuperuser (sukuriam superuseri)
+21. username: ??
+22. emailaddress: ??
+23. pass: ??
+24. pass: ??
+25. atsidarom webo puslapi ir modifikuojam id adresa irasydami(/admin): http://127.0.0.1:8000/admin/
+
+
+
+
+
+
