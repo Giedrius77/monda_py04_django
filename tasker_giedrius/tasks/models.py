@@ -13,17 +13,18 @@ class Project(models.Model):
         related_name='projects',
     )
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = _("project")
         verbose_name_plural = _("projects")
         ordering = ['name']
 
-    def __str__(self):
-        return self.name
-    
     def get_absolute_url(self):
-        return reverse("model_detail", kwargs={"pk": self.pk})
-    
+        return reverse("project_detail", kwargs={"pk": self.pk})
+
+
 class Task(models.Model):
     name = models.CharField(_("name"), max_length=100, db_index=True)
     description = models.TextField(_("description"), blank=True, max_length=10000)
@@ -44,17 +45,16 @@ class Task(models.Model):
     is_done = models.BooleanField(_("is done"), default=False, db_index=True)
     deadline = models.DateTimeField(_("deadline"), null=True, blank=True, db_index=True)
 
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name = _("task")
         verbose_name_plural = _("tasks")
         ordering = ['is_done', '-created_at']
 
-    def __str__(self):
-        return self.name
-    
     def get_absolute_url(self):
-        return reverse("tasks_detail", kwargs={"pk": self.pk})
+        return reverse("task_detail", kwargs={"pk": self.pk})
     
 
 
