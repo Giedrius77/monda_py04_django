@@ -15,7 +15,8 @@ class Project(models.Model):
         related_name='projects',
     )
 
-    budget = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, verbose_name=_("budget"))
+    #budget = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, verbose_name=_("budget"))
+    budget = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name=_("budget"))
 
     def __str__(self):
         return self.name
