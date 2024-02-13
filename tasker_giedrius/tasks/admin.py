@@ -13,7 +13,7 @@ class ProjectAdmin (admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": (
-                ('name', 'owner'), # su () bus vienoje eilute, be - atskiruose
+                ('name', 'owner', 'budget'), # su () bus vienoje eilute, be - atskiruose
             ),
         }),
 
