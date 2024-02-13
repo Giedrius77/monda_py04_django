@@ -1,0 +1,17 @@
+{% comment %} command /    - komentarai {% endcomment %}
+{% comment %} Django reikia padaryti disable trumpam, nes irasius ! ir ENTER gausime paruosta standartini sablona, tada vel ijungiam Django {% endcomment %}
+{% comment %} html yra dokumentas o ne programa {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TASKer{% endblock title %}</title>
+</head>
+<body>
+    <main>{% block content %}{% endblock content %}</main>
+</body>
+</html>
+
+{% comment %} sis dokumentas bus naudojamas visur kaip sablonas {% endcomment %}
