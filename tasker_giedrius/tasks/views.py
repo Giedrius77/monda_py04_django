@@ -14,3 +14,9 @@ def index(request: HttpRequest) -> HttpResponse:
         'users_count': models.get_user_model().objects.count(),
     }
     return render(request, 'tasks/index.html', context)
+
+def task_list(request: HttpRequest) -> HttpResponse:
+    return render(request, 'tasks/task_list.html', {
+        'task_list': models.Task.objects.all()
+    })
+ 
