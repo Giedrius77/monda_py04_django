@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-15 10:30+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+
+#: tasks/admin.py:25
+msgid "total tasks"
+msgstr "viso užduočių"
+
+#: tasks/admin.py:29
+msgid "undone tasks"
+msgstr "nepadarytos užduotys"
+
+#: tasks/admin.py:33
+msgid "recent tasks"
+msgstr "paskutinės užduotys"
+
+#: tasks/admin.py:45
+msgid "General"
+msgstr "pagrindinis"
+
+#: tasks/admin.py:50
+msgid "Ownership"
+msgstr "nuosavybė"
+
+#: tasks/admin.py:55
+msgid "Temporal Tracking"
+msgstr "laiko sekimas"
+
+#: tasks/apps.py:7 tasks/models.py:58 tasks/templates/base.html:13
+#: tasks/templates/tasks/index.html:6 tasks/templates/tasks/task_list.html:4
+msgid "tasks"
+msgstr "užduotys"
+
+#: tasks/models.py:10 tasks/models.py:34
+msgid "nameeee"
+msgstr "pavadinimas"
+
+#: tasks/models.py:14
+msgid "ownereee"
+msgstr "savininkas"
+
+#: tasks/models.py:19
+msgid "budget"
+msgstr "biudžetas"
+
+#: tasks/models.py:25 tasks/models.py:39
+#: tasks/templates/tasks/task_detail.html:7
+msgid "project"
+msgstr "projektas"
+
+#: tasks/models.py:26 tasks/templates/tasks/index.html:5
+msgid "projects"
+msgstr "projektai"
+
+#: tasks/models.py:35
+msgid "description"
+msgstr "aprašas"
+
+#: tasks/models.py:45 tasks/templates/tasks/task_detail.html:7
+msgid "owner"
+msgstr "savininkas"
+
+#: tasks/models.py:48
+msgid "created at"
+msgstr "sukurta"
+
+#: tasks/models.py:49
+msgid "updated at"
+msgstr "atnaujinta"
+
+#: tasks/models.py:50
+msgid "is done"
+msgstr "padaryta"
+
+#: tasks/models.py:51 tasks/templates/tasks/task_detail.html:8
+#: tasks/templates/tasks/task_list.html:4
+msgid "deadline"
+msgstr "terminas"
+
+#: tasks/models.py:57 tasks/views.py:35
+msgid "task"
+msgstr "užduotis"
+
+#: tasks/templates/base.html:12 tasks/templates/tasks/index.html:3
+msgid "dashboard"
+msgstr "suvestinė"
+
+#: tasks/templates/base.html:25
+msgid "community on discord"
+msgstr "discordo bendruomonė"
+
+#: tasks/templates/tasks/index.html:4
+#| msgid "Users"
+msgid "users"
+msgstr "vartotojai"
+
+#: tasks/templates/tasks/task_detail.html:10
+msgid "created"
+msgstr "sukurta"
+
+#: tasks/templates/tasks/task_detail.html:11
+msgid "updated"
+msgstr "atnaujinta"
+
+#: tasks/templates/tasks/task_list.html:2
+msgid "list"
+msgstr "sąrašas"
+
+#: tasks/templates/tasks/task_list.html:7
+msgid "name"
+msgstr "pavadinimas"
+
+#: tasks/templates/tasks/task_list.html:8
+msgid "date"
+msgstr "data"
+
+#: tasks/views.py:37
+msgid "marked as"
+msgstr "pažymėta kaip"
+
+#: tasks/views.py:38
+msgid "done"
+msgstr "padaryta"
+
+#: tasks/views.py:38
+msgid "undone"
+msgstr "nepadaryta"
+
+#~ msgid "Tasks"
+#~ msgstr "užduotys"
+
+#~ msgid "Projects"
+#~ msgstr "projektai"

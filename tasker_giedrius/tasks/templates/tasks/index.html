@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
 {% block content %}
-<h1>TASKer</h1> 
-<p>Users: {{ users_count }}</p>
-<p>Projects: {{ projects_count }}</p>
-<p>Tasks: {{ tasks_count }}</p>
+<h1>{% trans "dashboard"|capfirst %}</h1> 
+<p>{% trans "users"|capfirst %}: {{ users_count }}</p>
+<p>{% trans "projects"|capfirst %}: {{ projects_count }}</p>
+<p>{% trans "tasks"|capfirst %}: {{ tasks_count }}</p>
 {% endblock content %}
 
 

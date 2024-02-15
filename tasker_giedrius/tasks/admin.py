@@ -22,15 +22,15 @@ class ProjectAdmin (admin.ModelAdmin):
 
     def total_tasks(self, obj: models.Project): # sukuria papildoma stulpeli
         return obj.tasks.count()
-    total_tasks.short_description = _('total tasks') # galime pakeisti stulpelio pavadinima
+    total_tasks.short_description = _('total tasks') # galime pakeisti stulpelio pavadinima, _() - reiskia kad teksta gali buti verciamas i kita kalba
 
     def undone_tasks(self, obj: models.Project): # sukuria papildoma stulpeli
         return obj.tasks.filter(is_done=False).count()
-    undone_tasks.short_description = _('undone tasks') # galime pakeisti stulpelio pavadinima
+    undone_tasks.short_description = _('undone tasks') # galime pakeisti stulpelio pavadinima, _() - reiskia kad teksta gali buti verciamas i kita kalba
 
     def recent_tasks(self, obj: models.Project): # sukuria papildoma stulpeli
         return "; ".join(obj.tasks.order_by('-created_at').values_list('name', flat=True)[:3])
-    recent_tasks.short_description = _('recent tasks') # galime pakeisti stulpelio pavadinima
+    recent_tasks.short_description = _('recent tasks') # galime pakeisti stulpelio pavadinima, _() - reiskia kad teksta gali buti verciamas i kita kalba
 
 
 
@@ -45,19 +45,19 @@ class TaskAdmin(admin.ModelAdmin):
         (_('General'), {
             "fields": (
                 ('name', 'deadline', 'is_done'), 'description',
-            ),
+            ), # _() - reiskia kad teksta gali buti verciamas i kita kalba
         }),
         (_('Ownership'), {
             "fields": (
                 ('owner', 'project'),
-            ),
+            ), # _() - reiskia kad teksta gali buti verciamas i kita kalba
         }),
         (_('Temporal Tracking'), {
             "fields": (
                 ('created_at', 'updated_at', 'id'),
             ),
         }),
-    )
+    ) # _() - reiskia kad teksta gali buti verciamas i kita kalba
 
 
 admin.site.register(models.Project, ProjectAdmin)

@@ -4,6 +4,7 @@
 from django.contrib import messages
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.utils.translation import gettext_lazy as _ # kad veiktu vertimas
 from . import models
 
 # web browser agrindinio puslapio views
@@ -30,7 +31,12 @@ def task_done(request: HttpRequest, pk: int) -> HttpResponse:
     task = get_object_or_404(models.Task, pk=pk)
     task.is_done = not task.is_done
     task.save()
-    messages.success(request, f"Task #{task.name} marked as {'done' if task.is_done else 'undone'}.") #galima perduoti task.name vietoj {task.pk}
+    messages.success(request, "{} {} {} {}".format( # tik tokiu formatavimo budu galimas vertimas, su f"{} neveiks
+        _('task').capitalize(), # _() - reiskia kad teksta gali buti verciamas i kita kalba
+        task.name,
+        _('marked as'), # _() - reiskia kad teksta gali buti verciamas i kita kalba
+        _('done') if task.is_done else _('undone') # _() - reiskia kad teksta gali buti verciamas i kita kalba
+    ))
     if request.GET.get('next'):
         return redirect(request.GET.get('next'))
     return redirect(task_list)

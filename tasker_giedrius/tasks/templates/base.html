@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>{% load static i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
 <html lang="en"> {#pasirenkama kalba#}
 <head>
     <meta charset="UTF-8">
@@ -9,8 +9,8 @@
     <header>
         <span class="logo">TASKer</span>
         <ul class="nav">
-            <li><a href="{% url 'index' %}">Dashboard</a></li>
-            <li><a href="{% url 'task_list' %}">Tasks</a></li>
+            <li><a href="{% url 'index' %}">{% trans "dashboard"|capfirst %}</a></li> {#trans - nurodo kad versime si zodi, capfirst - nurodo kad zodis bus is didziosios raides#}
+            <li><a href="{% url 'task_list' %}">{% trans "tasks"|capfirst %}</a></li>
         </ul>
     </header>
     <section class="messages">
@@ -19,6 +19,12 @@
         {% endfor %}
     </section>
     <main>{% block content %}{% endblock content %}</main>
+    <footer>
+        {% block footer  %}{% endblock footer  %}
+        <p>&copy; 2024 PTU20
+            <a style="float:right;" href="https://discord.gg/ywbbZPcY">{% trans "community on discord" %}</a>
+        </p>
+    </footer>
 </body>
 </html>
 

@@ -1,8 +1,11 @@
-{% extends "base.html" %}
-{% block title %}{{ block.super }} list{% endblock title %}
+{% extends "base.html" %}{% load i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
+{% block title %}{{ block.super }} {% trans "list" %}{% endblock title %}
 {% block content %}
-<h1>Tasks</h1>
+<h1>{% trans "tasks"|capfirst %}<span style="float:right;">{% trans "deadline"|capfirst %}</span><h1>
 <ul>
+    <il class="list-table-heater">
+        <span>{% trans "name"|capfirst %}</span>
+        <span style="float:right;">{% trans "date"|capfirst %}</span>
 {% for task in task_list %}
     <li><a href="{% url "task_done" task.pk %}">
         {% if task.is_done %}&#x2611;{% else %}&#x2610;{% endif %}</a>
