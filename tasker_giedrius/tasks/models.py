@@ -12,7 +12,7 @@ class Project(models.Model):
         get_user_model(), 
         on_delete=models.CASCADE, 
         verbose_name=_("ownereee"), # _() - reiskia kad teksta gali buti verciamas i kita kalba
-        related_name='projects',
+        related_name='projects', #pasiekti useriams projektus
     )
 
     #budget = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, verbose_name=_("budget"))

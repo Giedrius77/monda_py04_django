@@ -1,5 +1,5 @@
-<!DOCTYPE html>{% load static i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
-<html lang="en"> {#pasirenkama kalba#}
+<!DOCTYPE html>{% load static i18n %}{% get_current_language as LANGUAGE_CODE %}{% get_available_languages as LANGUAGES %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
+<html lang="{{ LANGUAGE_CODE }}"> {#pasirenkama kalba#}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,18 @@
             <li><a href="{% url 'index' %}">{% trans "dashboard"|capfirst %}</a></li> {#trans - nurodo kad versime si zodi, capfirst - nurodo kad zodis bus is didziosios raides#}
             <li><a href="{% url 'task_list' %}">{% trans "tasks"|capfirst %}</a></li>
         </ul>
+        <span class="spacer"></span>
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ redirect_to }}">
+            <select class="language" name="language" onchange="this.form.submit();">
+                {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang.1 }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
     </header>
     <section class="messages">
         {% for message in messages %}
