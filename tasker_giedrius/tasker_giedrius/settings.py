@@ -121,7 +121,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/' # musu pateikti failai su programa turi buti 'static' folderyje
+STATIC_ROOT = BASE_DIR.joinpath(STATIC_URL) # nurodisime kurioje vietoje yra musu 'static' failai
+MEDIA_URL = 'media/' # user/vartotojas uploading failai (kaip nuotrauka ar pan.) turi buti 'media' folderyje
+MEDIA_ROOT = BASE_DIR.joinpath(MEDIA_URL)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

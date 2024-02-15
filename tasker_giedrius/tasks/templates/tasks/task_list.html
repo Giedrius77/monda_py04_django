@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
+{% extends "base.html" %}{% load static i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
 {% block title %}{{ block.super }} {% trans "list" %}{% endblock title %}
 {% block content %}
 <h1>{% trans "tasks"|capfirst %}<span style="float:right;">{% trans "deadline"|capfirst %}</span><h1>

@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
+{% extends "base.html" %}{% load static i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
 {% block content %}
 <h1>{% trans "dashboard"|capfirst %}</h1> 
 <p>{% trans "users"|capfirst %}: {{ users_count }}</p>

@@ -1,0 +1,10 @@
+/* 'body' tai html elementas, atspindintis pagrindini puslapi*/
+body {
+    background-color: #cccccc; /* pakeis background spalva, kuria galima rinktis palietus spalvu palete pries koda*/
+    font-family: sans-serif; /* srifto keitimas */
+    font-size: 16px; /* srifto dydis - siuo metu 16 pikseliu */
+}
+
+
+/* kad suveiktu pasikeitimai reikia eiti i templates ir base.html heade reikia iterpti CSS linka - <link rel="stylesheet" href="{% static 'css/style.css' %}">*/
+/* komentary rasymas CSS failuose*/

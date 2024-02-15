@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
+{% extends "base.html" %}{% load static i18n %} {#butinai reikia irasyti i18n, kad verstu i kita kalba#}
 {% block title %}{{ block.super }} | {{ task }}{% endblock title %}
 {% block content %}
 <h1><a href="{% url "task_done" task.pk %}?next={{ request.path }}">
