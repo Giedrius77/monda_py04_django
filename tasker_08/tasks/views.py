@@ -78,10 +78,6 @@ def index(request: HttpRequest) -> HttpResponse:
 
 def task_list(request: HttpRequest) -> HttpResponse:
     queryset = models.Task.objects
-    project_pk = request.GET.get('project_pk')
-    if project_pk:
-        project = get_object_or_404(models.Project, pk=project_pk)
-        queryset = queryset.filter(project=project)
     owner_username = request.GET.get('owner')
     if owner_username:
         owner = get_object_or_404(User, username=owner_username)
@@ -194,7 +190,7 @@ class ProjectDetailView(generic.DetailView):
 class ProjectCreateView(LoginRequiredMixin, generic.CreateView):
     model = models.Project
     template_name = 'tasks/project_create.html'
-    fields = ('name', )
+    fields = ('name', 'description', )
 
     def get_success_url(self) -> str:
         messages.success(self.request, _('project created successfully').capitalize())
@@ -212,7 +208,7 @@ class ProjectUpdateView(
     ):
     model = models.Project
     template_name = 'tasks/project_update.html'
-    fields = ('name', )
+    fields = ('name', 'description', )
 
     def get_success_url(self) -> str:
         messages.success(self.request, _('project updated successfully').capitalize())
