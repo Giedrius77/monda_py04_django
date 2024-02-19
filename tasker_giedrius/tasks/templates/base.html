@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}TASKer{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> {#linkas, kad veiktu style.css failas#}
 </head>
 <body>
     <header>
@@ -47,3 +47,4 @@
 {% comment %} Django reikia padaryti disable trumpam, nes irasius ! ir ENTER gausime paruosta standartini sablona, tada vel ijungiam Django {% endcomment %}
 {% comment %} html yra dokumentas o ne programa {% endcomment %}
 {% comment %} sis dokumentas bus naudojamas visur kaip sablonas {% endcomment %}
+{% comment %} savo base layout naudosime FLEX sistema, t.y. boxais kurie juda is kaires i desine ir is virsaus i apacia {% endcomment %}

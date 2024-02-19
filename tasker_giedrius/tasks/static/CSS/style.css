@@ -2,9 +2,125 @@
 body {
     background-color: #cccccc; /* pakeis background spalva, kuria galima rinktis palietus spalvu palete pries koda*/
     font-family: sans-serif; /* srifto keitimas */
-    font-size: 16px; /* srifto dydis - siuo metu 16 pikseliu */
+    font-size: 20px; /* srifto dydis - siuo metu 20 pikseliu */
+    display: flex; /* visas puslapis bus FLEX boxu sistema, ne grid (antras galimas isdestymo variantas) */
+    flex-direction: column; /* isdestymas boxu bus vertikalus */
+    margin: 0; padding: 0; /* netures nei margin, nei padding tarpu (galima keisti taip judindami boxus) */
+    min-height: 100vh; /* uzims 100% device height/vertical height */
+
+}
+
+header { 
+    background-color: #999999; /* header/virsaus spalva */
+    display: flex; /* pati header padaro i FLEX boxu sistema */
+    flex-direction: row; /* header FLEX boxai bus is desines i kaire */
+    align-items: center; /* sucentruos visus boxus headeryje is virsaus i apacia */
+    justify-content: none; /* sucentruos visus boxus headeryje i centra (reikia nurodyti - centre) */
+}
+
+header .logo { /* header .logo - tai musu headeryje "TASKer" kuri ir stilizuosime*/
+    font-size: 34px; /* srifto dydis, matuojamas px - pikseliais */
+    font-weight: 700; /* srifto storis */
+    padding: 0.5rem; /* rem - matavimo vienetas, kuris atitinka esama/pagrindinio srifto dydi nurodyta body (20px) */
+}
+
+header ul.nav { /* stilizuosime <ul class="nav"> ........ </ul>*/
+    display: flex;
+    flex-direction: row;
+    list-style-type: none; /* pagal nutylejima buvo disc (taskai pries teksta), nuimam */
+    margin-block: 0.5rem; /* visas blokas_mygtukas tures 10px margin aplink */
+    margin-left: 1rem; /* padarome 1rem kaireje margina, atsiras didesnis tarpas tarp TASKer ir mygtuku*/
+    padding-inline: 0;
+    gap: 0.5rem; /* tarp mygtuku_linku tarpai */
+}
+
+header ul.nav li a, header ul.nav li form button { /* pacio mygtuko_linko stilizavimas, ne teksto! */
+    background-color: #aaaaaa;
+    display: block; /* elementas uzims tiek vietos kiek jam duodama */
+    margin: 0;
+    padding: 0.5rem; /* tarp teksto ir remelio bus tarpas 10px siuo atveju */
+    border: none; /* bus 0 */
+    border-bottom: 3px solid #004488; /* apacia 2px, tai kaip underline bus nubrezta */
+    cursor: pointer; /* peles kursioriu pasirinkti */
+    color: #004488;
+    font-size: 100%;
+    border-radius: 0.5rem; /* mygtuko kampus suapvalins */
+}
+
+header ul.nav li a:hover, header ul.nav li form button:hover { /* uzejus ant mygtuko keisis elemento statusas */
+    background-color: #b8b8b8;
+    border-bottom: 2px solid #e81e1e;
+    color: #e81e1e;
+    text-decoration: none; /* nereikia underline sioje vietoje */
+    
+}
+
+main {
+    flex-grow: 1; /* jeigu 1 tai puslapis plesis kiek turi vietos per visa FLEX boxa */
+}
+
+footer {
+    background-color: #666666; /* footerio/apacios spalva */
+}
+
+a { /* Making links prettier, t.y. aktyvus mygtukai headeryje: Dashboard, Tasks ir kiti, kurie yra HTML faile tarp <a></a> */
+    color: #004488;
+    text-decoration: none; /* linko underline bus nuimtas */
+    font-weight: 700; /* pastorins srifta */
+    font-size: 20px; /* srifto dydis - siuo metu 20 pikseliu */
+}
+
+a:hover {
+    color: #e81e1e; /* galime su hover pakeisti elemento statusa, t.y. PALIETUS teksta jis pakeis spalva */
+    text-decoration: underline; /* pasikeis elemento statusa, t.y. PALIETUS teksta atsiras underline */
+} /* sioje skyltyje teksto dydzio (px) NEREKOMENDUOJAMA keisti, nes isstumdis visus boxus */
+
+/* Stilizuojame visus headingus, siuo atveju musu header yra "Dashboard" */
+
+h1, h2, h3, h4, h5, h6 { /* HTML egzistuoja h tagai iki 6, tai ir pasidarome nors ir nenaudosime visu */
+    background-color: #bbbbbb;
+    border-bottom: 1px solid #888888;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
+h1:first-child, h2:first-child, h3:first-child, /* tarpu panaikinimas tarp header ir main */
+h4:first-child, h5:first-child, h6:first-child {
+    margin-top: 0;
+}
+
+p, main ul { /* stilizuosime main langa_boxa */
+    font-size: 20px; /* srifto dydis - siuo metu 20 pikseliu */
+    padding: 0 1.5rem;
+    margin: 1rem 0;
+    list-style-type: none; /* pagal nutylejima buvo disc (taskai pries teksta), nuimam */
+}
+
+main ul li { /* stilizuosime main langa_boxa */
+    border-bottom: 1px solid #999999;
+
+}
+
+main ul li.list-table-header { /* stilizuosime main lange_boxe: Name ir Date boxa */
+    padding-bottom: 1rem;
+
+}
+
+main h1 { /* stilizuosime main lange_boxe: Name ir Date boxa */
+    font-size: 30px; /* srifto dydis - siuo metu 20 pikseliu */
+
 }
 
 
 /* kad suveiktu pasikeitimai reikia eiti i templates ir base.html heade reikia iterpti CSS linka - <link rel="stylesheet" href="{% static 'css/style.css' %}">*/
-/* komentary rasymas CSS failuose*/
+/* HTML faile tarp <a></a>, <body></body>, <header></header> ir kitu galima vizualizuoti .css faile nurodydami ka norime daryti  */
+/* em - atitinka dabartinio srifto dydi, rem - atitinka esama/pagrindinio srifto dydi nurodyta body (20px) */
+/* naudojant em ir rem tekstas AUTOMATISKAI keiciasi su zoom funkcija */
+/* komentary rasymas CSS failuose*/ 
+/* spalvu struktura: 1_2-raudona, 3_4-zalia, 5_6-melyna, a_b_c_d_e_f - atitinka skaicius virs desimties ir jie visi yra sesioliktaine skaiciavimo sistema */
+/* pazymejus teksta ir paspaudus 'option' mygtuka galime stumdyti visa teksta su dodyklemis */
+/* padding, margin: VIEANAS skaicius - visos keturios puses*/
+/* padding, margin: DU skaiciai - pirmas: virsus-apacia, antras: kaire-desine */
+/* padding, margin: TRYS skaiciai - pirmas: virsus, antras: kaire-desine, trecias: apacia */
+/* padding, margin: KETURIS skaiciai - virsus, desine, apacia, kaire */
+/*  */
