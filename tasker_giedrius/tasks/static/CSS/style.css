@@ -1,6 +1,8 @@
 /* 'body' tai html elementas, atspindintis pagrindini puslapi*/
 body {
     background-color: #cccccc; /* pakeis background spalva, kuria galima rinktis palietus spalvu palete pries koda*/
+    background-image: url('/static/img/jerome.jpg'); /* viso puslapio background paveiksliukas */
+    background-size: cover;
     font-family: sans-serif; /* srifto keitimas */
     font-size: 20px; /* srifto dydis - siuo metu 20 pikseliu */
     display: flex; /* visas puslapis bus FLEX boxu sistema, ne grid (antras galimas isdestymo variantas) */
@@ -11,7 +13,7 @@ body {
 }
 
 header { 
-    background-color: #999999; /* header/virsaus spalva */
+    background-color: #9999993f; /* header/virsaus spalva, paskutinis 9f - permatomumas */
     display: flex; /* pati header padaro i FLEX boxu sistema */
     flex-direction: row; /* header FLEX boxai bus is desines i kaire */
     align-items: center; /* sucentruos visus boxus headeryje is virsaus i apacia */
@@ -57,10 +59,11 @@ header ul.nav li a:hover, header ul.nav li form button:hover { /* uzejus ant myg
 
 main {
     flex-grow: 1; /* jeigu 1 tai puslapis plesis kiek turi vietos per visa FLEX boxa */
+    background-color: #cccccc9f;
 }
 
 footer {
-    background-color: #666666; /* footerio/apacios spalva */
+    background-color: #6666669f; /* footerio/apacios spalva, 9f - permatomumas */
 }
 
 a { /* Making links prettier, t.y. aktyvus mygtukai headeryje: Dashboard, Tasks ir kiti, kurie yra HTML faile tarp <a></a> */
@@ -78,7 +81,7 @@ a:hover {
 /* Stilizuojame visus headingus, siuo atveju musu header yra "Dashboard" */
 
 h1, h2, h3, h4, h5, h6 { /* HTML egzistuoja h tagai iki 6, tai ir pasidarome nors ir nenaudosime visu */
-    background-color: #bbbbbb;
+    background-color: #9999995f;
     border-bottom: 1px solid #888888;
     padding: 0.5rem;
     margin: 1rem 0;
@@ -111,6 +114,75 @@ main h1 { /* stilizuosime main lange_boxe: Name ir Date boxa */
 
 }
 
+footer p { 
+    color: #cccccc; /* footer <p>2024 PTU20</p> */
+}
+
+footer a {
+    color: #66aaff;  /* footer <a></a> */
+}
+
+footer a:hover {
+    color: #e95555; /* footer <a></a>  pakeis spalva uzejus ant teksto */
+}
+
+section.messages { /* base.html - <section class="messages"> */
+    padding: 0;
+    margin: 0;
+}
+
+section.messages .message { /* stilizuojame pati message */
+    padding: 0.5rem;
+    margin: 0;
+    border-bottom: 1px solid #888888;
+    display: inline-block; /* pagal nutilejima visada block, t.y. per visa langa */
+}
+
+.message-debug { 
+    background-color: #aaaaaa; /* debug .message background spalva */
+}
+
+.message-info {
+    background-color: #99ccff; /* info .message background spalva */
+}
+
+.message-success {
+    background-color: #ccff99; /* success .message background spalva */
+}
+
+.message-warning {
+    background-color: #ffcc99; /* warning .message background spalva */
+}
+
+.message-error {
+    background-color: #ffaaaa; /* error .message background spalva */
+}
+
+.spacer { /*  base.html: <span class="spacer"></span> */
+    flex-grow: 1; /* kalbos pakeitimo ikona  lygiuosies i desine*/
+}
+
+header form select {
+    margin: 1rem; 
+    font-size: 100%;
+}
+
+div.mona_lisa {
+    background-image: url('/static/img/mona_lisa.jpg');
+    background-size: cover;
+    display: inline-block;
+    border: 2px solid #ffcc00;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+div.fog {
+    background-color: #ffffff7f; /* reguliuojamas permatomumas su 7-8 simboliu */
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
 
 /* kad suveiktu pasikeitimai reikia eiti i templates ir base.html heade reikia iterpti CSS linka - <link rel="stylesheet" href="{% static 'css/style.css' %}">*/
 /* HTML faile tarp <a></a>, <body></body>, <header></header> ir kitu galima vizualizuoti .css faile nurodydami ka norime daryti  */
@@ -118,6 +190,7 @@ main h1 { /* stilizuosime main lange_boxe: Name ir Date boxa */
 /* naudojant em ir rem tekstas AUTOMATISKAI keiciasi su zoom funkcija */
 /* komentary rasymas CSS failuose*/ 
 /* spalvu struktura: 1_2-raudona, 3_4-zalia, 5_6-melyna, a_b_c_d_e_f - atitinka skaicius virs desimties ir jie visi yra sesioliktaine skaiciavimo sistema */
+/* spalvu reguliuojamas permatomumas su 7-8 simboliais*/
 /* pazymejus teksta ir paspaudus 'option' mygtuka galime stumdyti visa teksta su dodyklemis */
 /* padding, margin: VIEANAS skaicius - visos keturios puses*/
 /* padding, margin: DU skaiciai - pirmas: virsus-apacia, antras: kaire-desine */
