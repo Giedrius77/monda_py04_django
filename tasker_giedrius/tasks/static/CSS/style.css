@@ -2,7 +2,8 @@
 body {
     background-color: #cccccc; /* pakeis background spalva, kuria galima rinktis palietus spalvu palete pries koda*/
     background-image: url('/static/img/jerome.jpg'); /* viso puslapio background paveiksliukas */
-    background-size: cover;
+    background-size: cover; /* contain: sutalpins .jpg tik vertikaliai, o horizontaliai padaugins paveikslelius, cover: isples visa pav. per puslapi */
+    background-repeat: none; /* galime isjungti paveiksleliu horizontalu pasikartojima */
     font-family: sans-serif; /* srifto keitimas */
     font-size: 20px; /* srifto dydis - siuo metu 20 pikseliu */
     display: flex; /* visas puslapis bus FLEX boxu sistema, ne grid (antras galimas isdestymo variantas) */
@@ -168,7 +169,7 @@ header form select {
 }
 
 div.mona_lisa {
-    background-image: url('/static/img/mona_lisa.jpg');
+    background-image: url('/static/img/mona_lisa.jpg'); /* indeksas Dashboarde */
     background-size: cover;
     display: inline-block;
     border: 2px solid #ffcc00;
@@ -181,6 +182,10 @@ div.fog {
     display: inline-block;
     padding: 2rem;
     border-radius: 1rem;
+}
+
+footer img {
+    max-height: 24;
 }
 
 
@@ -196,4 +201,5 @@ div.fog {
 /* padding, margin: DU skaiciai - pirmas: virsus-apacia, antras: kaire-desine */
 /* padding, margin: TRYS skaiciai - pirmas: virsus, antras: kaire-desine, trecias: apacia */
 /* padding, margin: KETURIS skaiciai - virsus, desine, apacia, kaire */
+/* paspaudus SHIFT ir safaryje reload icon atnaujins puslapi be cashu!! */
 /*  */
