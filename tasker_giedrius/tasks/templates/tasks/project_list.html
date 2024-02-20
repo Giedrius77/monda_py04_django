@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ block.super }} {% trans "projects" %}{% endblock title %} {# sukurs bloka su parametrais #}
+{% block content %} {# uzpildis bloka nurodytais parametrais #}
+<h1>{% trans "projects"|capfirst %}</h1> {# "Projects" bus pavadinimas #}
+<ul>
+{% for project in project_list %}
+    <li>
+        <a href="{% url "project_detail" project.pk %}">{{ project.name }}</a>
+        ({{ project.tasks.count }})
+    </li>
+{% endfor %}
+</ul>
+{% endblock content %}
+
+{# http://127.0.0.1:8000/projects/ sukurs linka tiesiai i projects #}
+{# tada reikia susikurti project_detail.html template #}

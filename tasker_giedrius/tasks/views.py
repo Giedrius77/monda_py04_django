@@ -2,12 +2,39 @@
 # kuris yra vienas puslapis
 
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _ # kad veiktu vertimas
+from django.views import generic
 from . import models
 
-# web browser agrindinio puslapio views
+# pagrindinio puslapio views based on class model, kuris niekuom nepranasesnis uz def model based
+# parasius views reikia itraukti i urls.py
+
+class ProjectListView(generic.ListView):
+    model = models.Project
+    template_name = 'tasks/project_list.html'
+
+class ProjectDetailView(generic.DetailView):
+    model = models.Project
+    template_name = 'tasks/project_detail.html'
+
+class ProjectCreateView(LoginRequiredMixin, generic.CreateView):
+    model = models.Project
+    template_name = 'tasks/project_create.html'
+    fields = ('name', )
+
+    def get_success_url(self) -> str: # user projekto sukurimas ir jo sukurimo sekme!
+        messages.success(self.request, _('project created successfully').capitalize()) # _() tekstas bus verciamas
+        return reverse('project_list') # jei teisingai sukurs nuves i project_list, kiu atveju klaida
+
+    def form_valid(self, form): # patikrins ar forma sukurta teisingai
+        form.instance.owner = self.request.user # tas kas sukure tas ir bus owneris, nereiks nurodineti pagrindinio ownerio
+        return super().form_valid(form)
+
+# web browser agrindinio puslapio views based on def model
 
 def index(request: HttpRequest) -> HttpResponse:
     context = {

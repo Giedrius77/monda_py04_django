@@ -9,8 +9,9 @@
 <body>
     <header>
         <span class="logo">TASKer</span>
-        <ul class="nav">
+        <ul class="nav"> {# navigacijos-linku mygtukai headeryje: Dashboard, Projects, Tasks#}
             <li><a href="{% url 'index' %}">{% trans "dashboard"|capfirst %}</a></li> {#trans - nurodo kad versime si zodi, capfirst - nurodo kad zodis bus is didziosios raides#}
+            <li><a href="{% url 'project_list' %}">{% trans "projects"|capfirst %}</a></li>
             <li><a href="{% url 'task_list' %}">{% trans "tasks"|capfirst %}</a></li>
         </ul>
         <span class="spacer"></span>
