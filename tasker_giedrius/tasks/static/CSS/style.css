@@ -129,7 +129,7 @@ footer a:hover {
 
 section.messages { /* base.html - <section class="messages"> */
     padding: 0;
-    margin: 0;
+    margin: 0; 
 }
 
 section.messages .message { /* stilizuojame pati message */
