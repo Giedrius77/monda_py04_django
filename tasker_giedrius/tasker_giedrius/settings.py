@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'tasks',
+    'tasks', # pagrindinis apps template
+    'user_profile', # userio template, jis turi eiti po pagrindinio
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

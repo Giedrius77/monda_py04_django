@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% trans "signup for"|capfirst %} {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>{% trans "signup for"|capfirst %} TASKer</h1>
+<form method="post" action="{{ request.path }}">
+    {% csrf_token %} {# csrf_token yra privalomas post formose: form method="post"! #}
+    {{ form.as_p }} {# spausdins kiekviena elementa paragrafais, o .as.li buti list principas. Form template paveldetas is django!!!! #}
+    <p><button type="submit">{% trans "register account"|title %}</button></p>
+</form>
+{% endblock content %}

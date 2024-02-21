@@ -132,7 +132,7 @@ section.messages { /* base.html - <section class="messages"> */
     margin: 0; 
 }
 
-section.messages .message { /* stilizuojame pati message */
+section.messages .message, ul.errorlist { /* stilizuojame pati message */
     padding: 0.5rem;
     margin: 0;
     border-bottom: 1px solid #888888;
@@ -155,7 +155,7 @@ section.messages .message { /* stilizuojame pati message */
     background-color: #ffcc99; /* warning .message background spalva */
 }
 
-.message-error {
+.message-error, ul.errorlist {
     background-color: #ffaaaa; /* error .message background spalva */
 }
 
@@ -186,6 +186,25 @@ div.fog {
 
 footer img {
     max-height: 24;
+}
+
+main form label {
+    display: inline-block;
+    width: 20vw;
+    min-width: 15rem;
+    font-size: 120%;
+}
+
+main form input, 
+main form textarea, 
+main form select,
+main form button {
+    font-size: 120%;
+}
+
+main form .helptext {
+    display: block; /* numes help teksta i apacia  kitoje eiluteje */
+    font-size: 90%;
 }
 
 
