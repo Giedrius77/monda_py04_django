@@ -227,6 +227,14 @@ button:hover, .button:hover { /* keisti elemento statusa, t.y. PALIETUS teksta j
     margin: 0.5rem;
 }
 
+.toolbar form {
+    display: inline;
+}
+
+.toolbar form select {
+    padding: 0.4rem;
+}
+
 
 /* kad suveiktu pasikeitimai reikia eiti i templates ir base.html heade reikia iterpti CSS linka - <link rel="stylesheet" href="{% static 'css/style.css' %}">*/
 /* HTML faile tarp <a></a>, <body></body>, <header></header> ir kitu galima vizualizuoti .css faile nurodydami ka norime daryti  */

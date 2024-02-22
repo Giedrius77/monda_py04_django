@@ -4,6 +4,17 @@
 <h1>{% trans "projects"|capfirst %}</h1> {# "Projects" bus pavadinimas #}
 <div class="toolbar"> {# nauja skiltis Project puslapyje kuriame desime visus mygtukus: naujas mygtuka "create new" #}
     <a class="button" href="{% url "project_create" %}">{% trans "create new"|capfirst %}</a> {# naujas mygtuka "create new" #}
+    <form method="get" action="{{ request.path }}">
+        <select name="owner" onchange="this.form.submit();">
+            <option value="">{% trans "filter by owner"|capfirst %}</option>
+            {% for user in user_list %}
+                <option value="{{ user.username }}" {% if user.username == request.GET.owner %}selected{% endif %}>
+                    {{ user.first_name }} {{ user.last_name }} 
+                    ({{ user.username }})
+                </option>
+            {% endfor %}
+        </select>
+    </form>
 </div>
 <ul>
 {% for project in project_list %}
@@ -16,4 +27,4 @@
 {% endblock content %}
 
 {# http://127.0.0.1:8000/projects/ sukurs linka tiesiai i projects #}
-{# tada reikia susikurti project_detail.html template #}
+{# tada reikia susikurti project_detail.html template #} 

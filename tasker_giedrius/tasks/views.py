@@ -1,8 +1,11 @@
 # kuriame nauja front end view vietoj raketos
 # kuris yra vienas puslapis
 
+from typing import Any
 from django.contrib import messages
+from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.db.models.query import QuerySet
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
@@ -16,6 +19,18 @@ from . import models
 class ProjectListView(generic.ListView):
     model = models.Project
     template_name = 'tasks/project_list.html'
+
+    def get_queryset(self) -> QuerySet[Any]:
+        queryset = super().get_queryset()
+        if self.request.GET.get('owner'):
+            queryset = queryset.filter(owner__username=self.request.GET.get('owner'))
+        return queryset
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['user_list'] = get_user_model().objects.all().order_by('username')
+        return context
+    
 
 class ProjectDetailView(generic.DetailView):
     model = models.Project
