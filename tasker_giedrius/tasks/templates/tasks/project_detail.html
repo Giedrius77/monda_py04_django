@@ -2,10 +2,10 @@
 {% block title %}{{ project.name }} | {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>{{ project.name }}</h1>
-<p>{% trans "owner" %}: <a href="{#% url "user_detail" project.owner.username %#}">{{ project.owner }}</a></p>
+<p>{% trans "owner" %}: <a href="{% url "user_detail" project.owner.username %}">{{ project.owner }}</a></p>
 <p>{% trans "tasks" %}: {{ project.tasks.count }}</p>
 {% endblock content %}
 
 
-{#% url "user_detail" project.owner.username %#} {# reikia atkomentuoti sia eilute veliau #}
-{# norint kad veiktu useris-project_details.html reikia pasidaryti 05 tema #}
+{#% url "user_detail" project.owner.username %#} {# reikia atkomentuoti sia eilute veliau - PADARYTA#}
+{# norint kad veiktu useris-project_details.html reikia pasidaryti 05 tema - PADARYTA#}
