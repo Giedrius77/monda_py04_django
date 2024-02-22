@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-15 10:30+0000\n"
+"POT-Creation-Date: 2024-02-22 08:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: tasks/admin.py:25
 msgid "total tasks"
-msgstr "viso užduočių"
+msgstr "viso užduočių" 
 
 #: tasks/admin.py:29
 msgid "undone tasks"
@@ -44,8 +44,10 @@ msgstr "nuosavybė"
 msgid "Temporal Tracking"
 msgstr "laiko sekimas"
 
-#: tasks/apps.py:7 tasks/models.py:58 tasks/templates/base.html:13
-#: tasks/templates/tasks/index.html:6 tasks/templates/tasks/task_list.html:4
+#: tasks/apps.py:7 tasks/models.py:58 tasks/templates/base.html:15
+#: tasks/templates/tasks/index.html:6
+#: tasks/templates/tasks/project_detail.html:6
+#: tasks/templates/tasks/task_list.html:4
 msgid "tasks"
 msgstr "užduotys"
 
@@ -66,7 +68,9 @@ msgstr "biudžetas"
 msgid "project"
 msgstr "projektas"
 
-#: tasks/models.py:26 tasks/templates/tasks/index.html:5
+#: tasks/models.py:26 tasks/templates/base.html:14
+#: tasks/templates/tasks/index.html:5 tasks/templates/tasks/project_list.html:2
+#: tasks/templates/tasks/project_list.html:4
 msgid "projects"
 msgstr "projektai"
 
@@ -74,7 +78,8 @@ msgstr "projektai"
 msgid "description"
 msgstr "aprašas"
 
-#: tasks/models.py:45 tasks/templates/tasks/task_detail.html:7
+#: tasks/models.py:45 tasks/templates/tasks/project_detail.html:5
+#: tasks/templates/tasks/task_detail.html:7
 msgid "owner"
 msgstr "savininkas"
 
@@ -95,20 +100,35 @@ msgstr "padaryta"
 msgid "deadline"
 msgstr "terminas"
 
-#: tasks/models.py:57 tasks/views.py:35
+#: tasks/models.py:57 tasks/views.py:62
 msgid "task"
 msgstr "užduotis"
 
-#: tasks/templates/base.html:12 tasks/templates/tasks/index.html:3
+#: tasks/templates/base.html:13 tasks/templates/tasks/index.html:3
 msgid "dashboard"
 msgstr "suvestinė"
 
+#: tasks/templates/base.html:22
+msgid "admin"
+msgstr "admin"
+
 #: tasks/templates/base.html:25
+msgid "log out"
+msgstr "atsijungti"
+
+#: tasks/templates/base.html:27
+msgid "log in"
+msgstr "prisijungti"
+
+#: tasks/templates/base.html:28
+msgid "sign up"
+msgstr "užsiregistruoti"
+
+#: tasks/templates/base.html:52
 msgid "community on discord"
 msgstr "discordo bendruomonė"
 
 #: tasks/templates/tasks/index.html:4
-#| msgid "Users"
 msgid "users"
 msgstr "vartotojai"
 
@@ -132,15 +152,19 @@ msgstr "pavadinimas"
 msgid "date"
 msgstr "data"
 
-#: tasks/views.py:37
+#: tasks/views.py:30
+msgid "project created successfully"
+msgstr "sėkmingai sukurtas projektas"
+
+#: tasks/views.py:64
 msgid "marked as"
 msgstr "pažymėta kaip"
 
-#: tasks/views.py:38
+#: tasks/views.py:65
 msgid "done"
 msgstr "padaryta"
 
-#: tasks/views.py:38
+#: tasks/views.py:65
 msgid "undone"
 msgstr "nepadaryta"
 
