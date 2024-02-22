@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 08:33+0200\n"
+"POT-Creation-Date: 2024-02-22 11:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: tasks/admin.py:25
 msgid "total tasks"
-msgstr "viso užduočių" 
+msgstr "viso užduočių"
 
 #: tasks/admin.py:29
 msgid "undone tasks"
@@ -131,6 +131,22 @@ msgstr "discordo bendruomonė"
 #: tasks/templates/tasks/index.html:4
 msgid "users"
 msgstr "vartotojai"
+
+#: tasks/templates/tasks/project_create.html:2
+msgid "create a project at"
+msgstr "sukurti projektą adresu"
+
+#: tasks/templates/tasks/project_create.html:4
+msgid "create a project"
+msgstr "sukurti projektą"
+
+#: tasks/templates/tasks/project_create.html:8
+msgid "create"
+msgstr "sukurti"
+
+#: tasks/templates/tasks/project_list.html:6
+msgid "create new"
+msgstr "sukurti naują"
 
 #: tasks/templates/tasks/task_detail.html:10
 msgid "created"

@@ -207,6 +207,26 @@ main form .helptext {
     font-size: 90%;
 }
 
+button, .button { /* apstilizuosime visus "button" ir kitus elementus klaseje ".button" */
+    background-color: #d8d8d8;
+    border: 1px solid #666666;
+    border-bottom: 3px solid #004488;
+    padding: 0.5rem;
+    margin: 0 1rem;
+    font-size: 100%;
+    cursor: pointer;
+    border-radius: 0.5rem; /* mygtuko kampus suapvalins */
+}
+
+button:hover, .button:hover { /* keisti elemento statusa, t.y. PALIETUS teksta jis pasikeis */
+    background-color: #b8b8b8;
+    border-bottom: 2px solid #e81e1e;
+}
+
+.toolbar { /* apstilizuosime visas reiksmes klaseje ".toolbar" */
+    margin: 0.5rem;
+}
+
 
 /* kad suveiktu pasikeitimai reikia eiti i templates ir base.html heade reikia iterpti CSS linka - <link rel="stylesheet" href="{% static 'css/style.css' %}">*/
 /* HTML faile tarp <a></a>, <body></body>, <header></header> ir kitu galima vizualizuoti .css faile nurodydami ka norime daryti  */

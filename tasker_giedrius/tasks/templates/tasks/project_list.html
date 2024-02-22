@@ -2,6 +2,9 @@
 {% block title %}{{ block.super }} {% trans "projects" %}{% endblock title %} {# sukurs bloka su parametrais #}
 {% block content %} {# uzpildis bloka nurodytais parametrais #}
 <h1>{% trans "projects"|capfirst %}</h1> {# "Projects" bus pavadinimas #}
+<div class="toolbar"> {# nauja skiltis Project puslapyje kuriame desime visus mygtukus: naujas mygtuka "create new" #}
+    <a class="button" href="{% url "project_create" %}">{% trans "create new"|capfirst %}</a> {# naujas mygtuka "create new" #}
+</div>
 <ul>
 {% for project in project_list %}
     <li>
