@@ -33,6 +33,40 @@ class ProjectCreateView(LoginRequiredMixin, generic.CreateView):
     def form_valid(self, form): # patikrins ar forma sukurta teisingai
         form.instance.owner = self.request.user # tas kas sukure tas ir bus owneris, nereiks nurodineti pagrindinio ownerio
         return super().form_valid(form)
+    
+
+class ProjectUpdateView(
+        LoginRequiredMixin, 
+        UserPassesTestMixin, 
+        generic.UpdateView
+    ):
+    model = models.Project
+    template_name = 'tasks/project_update.html'
+    fields = ('name', )
+
+    def get_success_url(self) -> str:
+        messages.success(self.request, _('project updated successfully').capitalize())
+        return reverse('project_list')
+    
+    def test_func(self) -> bool | None: # patikrins ar useris turi teise redaguoti projekta
+        return self.get_object().owner == self.request.user or self.request.user.is_superuser 
+        # gales - jeigu yra projekto owneris arba superuseris, t.y. - admin
+
+class ProjectDeleteView(
+        LoginRequiredMixin, 
+        UserPassesTestMixin, 
+        generic.DeleteView
+    ):
+    model = models.Project
+    template_name = 'tasks/project_delete.html'
+
+    def get_success_url(self) -> str:
+        messages.success(self.request, _('project deleted successfully').capitalize())
+        return reverse('project_list')
+
+    def test_func(self) -> bool | None: # patikrins ar useris turi teise redaguoti projekta
+        return self.get_object().owner == self.request.user or self.request.user.is_superuser 
+        # gales - jeigu yra projekto owneris arba superuseris, t.y. - admin
 
 # web browser agrindinio puslapio views based on def model
 
