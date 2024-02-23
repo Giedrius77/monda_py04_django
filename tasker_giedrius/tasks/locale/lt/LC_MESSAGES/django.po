@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 14:35+0200\n"
+"POT-Creation-Date: 2024-02-23 13:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,7 +101,7 @@ msgstr "padaryta"
 msgid "deadline"
 msgstr "terminas"
 
-#: tasks/models.py:57 tasks/views.py:111
+#: tasks/models.py:57 tasks/views.py:129
 msgid "task"
 msgstr "užduotis"
 
@@ -147,7 +147,7 @@ msgstr "sukurti"
 
 #: tasks/templates/tasks/project_delete.html:2
 msgid "deleting"
-msgstr ""
+msgstr "trinamas"
 
 #: tasks/templates/tasks/project_delete.html:4
 msgid "deleting project"
@@ -155,7 +155,7 @@ msgstr "trinamas projektas"
 
 #: tasks/templates/tasks/project_delete.html:9
 msgid "are you sure you want to delete project"
-msgstr ""
+msgstr "ar tikrai norite ištrinti projektą"
 
 #: tasks/templates/tasks/project_delete.html:11
 msgid "all project's"
@@ -183,7 +183,7 @@ msgid "delete"
 msgstr "ištrinti"
 
 #: tasks/templates/tasks/project_detail.html:16
-#: tasks/templates/tasks/task_list.html:7
+#: tasks/templates/tasks/task_list.html:27
 msgid "name"
 msgstr "pavadinimas"
 
@@ -196,6 +196,7 @@ msgid "create new"
 msgstr "sukurti naują"
 
 #: tasks/templates/tasks/project_list.html:9
+#: tasks/templates/tasks/task_list.html:10
 msgid "filter by owner"
 msgstr "filtruoti pagal savininką"
 
@@ -219,7 +220,15 @@ msgstr "atnaujinta"
 msgid "list"
 msgstr "sąrašas"
 
-#: tasks/templates/tasks/task_list.html:8
+#: tasks/templates/tasks/task_list.html:16
+msgid "filter by project"
+msgstr "filtruoti pagal projektą"
+
+#: tasks/templates/tasks/task_list.html:21
+msgid "search by name"
+msgstr "ieškoti pagal pavadinimą"
+
+#: tasks/templates/tasks/task_list.html:28
 msgid "date"
 msgstr "data"
 
@@ -235,15 +244,15 @@ msgstr "sėkmingai pakeistas projektas"
 msgid "project deleted successfully"
 msgstr "sėkmingai ištrintas projektas"
 
-#: tasks/views.py:113
+#: tasks/views.py:131
 msgid "marked as"
 msgstr "pažymėta kaip"
 
-#: tasks/views.py:114
+#: tasks/views.py:132
 msgid "done"
 msgstr "padaryta"
 
-#: tasks/views.py:114
+#: tasks/views.py:132
 msgid "undone"
 msgstr "nepadaryta"
 

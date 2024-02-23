@@ -233,6 +233,20 @@ button:hover, .button:hover { /* keisti elemento statusa, t.y. PALIETUS teksta j
 
 .toolbar form select {
     padding: 0.4rem;
+    border-bottom: 3px solid #004488;
+}
+
+.toolbar form input {
+    padding: 0;
+    border-bottom: 3px solid #004488;
+    border-radius: 0.5rem;
+}
+
+.toolbar form button {
+    padding: 0;
+    margin: 0 0;
+    border-bottom: 3px solid #004488;
+    border-radius: 0.5rem;
 }
 
 
